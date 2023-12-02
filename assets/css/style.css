@@ -1,51 +1,172 @@
-body {
-    background-image: url('/assets/img/danau.jpeg');
-    background-size:cover;
-    background-repeat: no-repeat;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-image: url(../img/bg-3.jpg);
+    backdrop-filter: blur(4px);
     background-position: center;
-    margin: 0;
-    height: 100%;
-}
-
-body, html {
-    height: 100%;
-    margin: 0;
-}
-
-.container{
-    margin-left: 100px;
-    margin-top: 100px;
-}
-
-.card{
-    background: transparent;
-    border: none;
-    max-width: 1000px;
-}
-
-img{
-    height: 400px;
-    width: 400px;
-    border-radius: 10px;
-}
-
-.card-body{
-    padding: 0;
-    height: 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
     
 }
 
-.form-control{
-    background: transparent;
+.container{
+    height: 120vh;
+    width: 90%;
+    position: relative;
+    z-index: 1;
 }
 
-.text{
-    text-align: center;
+.weather-content-box{
+    height: 100px;
+    outline: none;
+    border: none;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(30px);
+    border-radius: 5px;
+    box-shadow: 0px 3px 40px rgba(0, 0, 0, 0.5);
+    transition: height .6s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.city-img{
+    height: 400px;
+    border-radius: 5px;
+    justify-content: center;
+    filter: brightness(70%);
+}
+
+.carousel{
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-inner{
+    border-radius: 5px;
+}
+
+.search-box{
+    display: flex;
+    align-items: center;
+    /* align-items: start; */
+    /* position: absolute; */
+}
+
+.search-box form{
+    display: flex;
+    background: rgba(255, 255, 255, .1);
+    backdrop-filter: blur(8px);
+    width: 380px;
+    height: 50px;
     margin-top: 30px;
-    font-weight: 700;
-    color: #FF9209;
+    margin-left: 20px;
+    padding: 10px;
+    font-size: 19px;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.text h3{
-    margin-top: 50px;
+.search-box form input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    padding-left: 10px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+}
+
+.search-box form input:focus{
+    outline: none;
+    background: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.search-box form input::placeholder {
+    color: white;
+    background: none;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.search-box form button{
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    padding-right: 10px;
+}
+
+.city-description i{
+    font-size: 50px;
+    color: white;
+    margin: 30px 80px 20px;
+    text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.8);
+}
+.city-description p{
+    font-weight: 600;
+    color: white;
+    text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.8);
+}
+
+.data-weather-box{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(30px);
+    margin: 0;
+    padding: 40px 0;
+    
+}
+
+.data-weather-box img{
+    width: 40%;
+    padding: 20px;
+    position: relative;
+    margin: auto;
+}
+
+.data-weather-box h4{
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+}
+
+
+
+
+/* =================================================================================================== */
+/*                                              Media Query                                            */
+/* =================================================================================================== */
+
+/* responsive phone Samsung S20 */
+@media (max-width: 468px) {
+    
+}
+
+/* Mobile phone */
+@media (min-width: 469px) and (max-width: 767px) {
+    
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 990px) {
+    
+}
+
+/* laptop 1200px */
+@media (min-width: 991px) and (max-width: 1200px) {
+    
 }
