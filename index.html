@@ -1,97 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>LACA | Ramalan Cuaca | Final Project IV</title>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LACA | Ramalan Cuaca | Final Project IV</title>
+        <!-- style -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+    </head>
 
-    <!-- style -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-</head>
-
-<body>
-    <div class="container">
-        <div class="card weather-content-box">
-
-            <!-- carousel Img -->
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="3000">
-                    <img src="assets/img/danau.jpeg" class="d-block w-100 card-img city-img" alt="...">
-                  </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <img src="assets/img/bromo.jpeg" class="d-block w-100 card-img city-img" alt="...">
-                  </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <img src="assets/img/bg.jpg" class="d-block w-100 card-img city-img" alt="...">
-                  </div>
-                </div>
-            </div>
-            
-            <!-- Text On carousel Img -->
-            <div class="row card-img-overlay text-overlay">
-                <div class="col"></div>
-                <div class="col-6 me-auto search-box">
-                    <form action="" id="formCity" class="form-city">
-                        <input type="text" placeholder="Enter location" id="City"/>
-                        <button type="submit" class="fa-solid fa-magnifying-glass" id="inputCity">
-                        </button>
-                    </form>
-                </div>
-                <div class="col-auto text-center city-description">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <p><span>Location</span>, Indonesia</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- text on card body with detail weather -->
-        <div class="row card-body data-weather-box">
-            <div class="col-md-4">
-                <div class="detail-weather">
-                    <img src="assets/img/clear.png" alt="corona virus active">
-                    <div class="card-body mt-1">
-                        <h4 class="card-title">Cerah</h4>
-                        <h6 class="card-text" id="active"></h6>
+    <body>
+        <div class="container">
+            <div class="card weather-content-box position-relative">
+                <!-- carousel Img -->
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <!-- Text On carousel Img -->
+                    <div class="row card-img-overlay text-overlay position-absolute" id="search-info">
+                        <div class="col d-none d-md-flex"></div>
+                        <div class="col-md-6 justify-content-center search-box order-2 order-md-1">
+                            <form action="" id="formCity" class="form-city w-100">
+                                <input type="text" placeholder="Enter location" id="City" autocomplete="off" />
+                                <button type="submit" class="fa-solid fa-magnifying-glass" id="inputCity" autocomplete="none"></button>
+                            </form>
+                        </div>
+                        <div class="col text-center city-description order-1 order-md-2">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p><span>Location</span>, Indonesia</p>
+                        </div>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="2000">
+                            <img src="assets/img/bg-1.jpg" class="d-block w-100 card-img city-img" alt="..." />
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <img src="assets/img/bg-2.jpg" class="d-block w-100 card-img city-img" alt="..." />
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <img src="assets/img/bg.jpg" class="d-block w-100 card-img city-img" alt="..." />
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="detail-weather">
-                    <img src="assets/img/mist.png" alt="corona virus active">
-                    <div class="card-body mt-1">
-                        <h4 class="card-title">6Km/h</h4>
-                        <h6 class="card-text" id="active"></h6>
+
+            <!-- text on card body with detail weather -->
+            <div class="row card-body data-weather-box">
+                <div class="col-md-4">
+                    <div class="detail-weather">
+                        <img src="assets/img/clear.png" alt="corona virus active" />
+                        <div class="card-body mt-1">
+                            <h4 class="card-title">Cerah</h4>
+                            <h6 class="card-text" id="active"></h6>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="detail-weather">
-                    <img src="assets/img/temperature.png" alt="corona virus active">
-                    <div class="card-body mt-1">
-                        <h4 class="card-title">21°C</h4>
-                        <h6 class="card-text" id="active"></h6>
+                <div class="col-md-4">
+                    <div class="detail-weather">
+                        <img src="assets/img/mist.png" alt="corona virus active" />
+                        <div class="card-body mt-1">
+                            <h4 class="card-title">6Km/h</h4>
+                            <h6 class="card-text" id="active"></h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="detail-weather">
+                        <img src="assets/img/temperature.png" alt="corona virus active" />
+                        <div class="card-body mt-1">
+                            <h4 class="card-title">21°C</h4>
+                            <h6 class="card-text" id="active"></h6>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- script -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous">
-    </script>
-    <script src="https://kit.fontawesome.com/bc2668a83f.js" crossorigin="anonymous"></script>
-    <script src="assets/js/script.js"></script>
-</body>
-
+        <!-- script -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/bc2668a83f.js" crossorigin="anonymous"></script>
+        <script src="assets/js/script.js"></script>
+    </body>
 </html>

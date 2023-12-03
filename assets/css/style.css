@@ -15,7 +15,7 @@ body{
 }
 
 .container{
-    height: 120vh;
+    min-height: 120vh;
     width: 90%;
     position: relative;
     z-index: 1;
@@ -32,6 +32,7 @@ body{
     transition: height .6s ease;
     position: relative;
     z-index: 2;
+    margin-top: -700;
 }
 
 .city-img{
@@ -52,8 +53,6 @@ body{
 .search-box{
     display: flex;
     align-items: center;
-    /* align-items: start; */
-    /* position: absolute; */
 }
 
 .search-box form{
@@ -124,12 +123,10 @@ body{
     justify-content: center;
     align-items: center;
     color: white;
-
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(30px);
     margin: 0;
     padding: 40px 0;
-    
 }
 
 .data-weather-box img{
@@ -144,6 +141,11 @@ body{
     letter-spacing: 0.1rem;
 }
 
+#search-info {
+    z-index: 99 !important;
+}
+
+
 
 
 
@@ -153,17 +155,21 @@ body{
 
 /* responsive phone Samsung S20 */
 @media (max-width: 468px) {
-    
+    /* .data-weather-box{
+        margin-top: -135px;
+    } */
 }
 
 /* Mobile phone */
 @media (min-width: 469px) and (max-width: 767px) {
-    
+
 }
 
 /* Tablet */
 @media (min-width: 768px) and (max-width: 990px) {
-    
+    .search-box {
+        margin-top: 200px;
+    }
 }
 
 /* laptop 1200px */
