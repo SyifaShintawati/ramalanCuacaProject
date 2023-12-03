@@ -8,6 +8,6 @@ search.addEventListener('click', (e) => {
 
     contentbox.style.height = '400px';
     weatherbox.style.visibility = 'visible';
-    // searchbox.style.alignItems = 'center';
+    // weatherbox.style.marginTop = '20';
 
 });
