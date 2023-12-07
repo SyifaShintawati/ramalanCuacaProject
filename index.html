@@ -1,93 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Ramalan Cuaca | Final Project IV</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramalan Cuaca | Final Project IV</title>
 
-        <!-- style -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-        <link rel="stylesheet" href="assets/css/style.css" />
-    </head>
+    <!-- style -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-    <body>
-        <div class="container">
-            <div class="card weather-content-box position-relative">
-                <!-- carousel Img -->
-                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    <!-- Text On carousel Img -->
-                    <div class="row card-img-overlay text-overlay position-absolute" id="search-info">
-                        <div class="col d-none d-md-flex"></div>
-                        <div class="col-md-6 justify-content-center search-box order-2 order-md-1">
-                            <form action="" id="formCity" class="form-city w-100">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <input type="text" placeholder="Enter location" id="City" class="city-field" autocomplete="off" />
-                                <button type="submit" class="fa-solid fa-magnifying-glass" id="inputCity" autocomplete="none" onclick="getWeather()"></button>
-                            </form>
-                        </div>
-                        <div class="col text-center city-description order-1 order-md-2">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <p><span>Location</span>, Indonesia</p>
-                        </div>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="2000">
-                            <img src="assets/img/bg-1.jpg" class="d-block w-100 card-img city-img" id="city-img-1" alt="..." />
-                        </div>
-                        <div class="carousel-item" data-bs-interval="2000">
-                            <img src="assets/img/bg-2.jpg" class="d-block w-100 card-img city-img" id="city-img-2" alt="..." />
-                        </div>
-                        <div class="carousel-item" data-bs-interval="2000">
-                            <img src="assets/img/bg.jpg" class="d-block w-100 card-img city-img" id="city-img-3" alt="..." />
-                        </div>
-                    </div>
-                </div>
+  <body>
+    <div class="container">
+      <div class="card weather-content-box position-relative">
+        <!-- carousel Img -->
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <!-- Text On carousel Img -->
+          <div
+            class="row card-img-overlay text-overlay position-absolute"
+            id="search-info"
+          >
+            <div class="col d-none d-md-flex"></div>
+            <div
+              class="col-md-6 justify-content-center search-box order-2 order-md-1"
+            >
+              <form action="" id="formCity" class="form-city w-100">
+                <i class="fa-solid fa-location-dot"></i>
+                <input
+                  type="text"
+                  placeholder="Enter location"
+                  id="City"
+                  class="city-field"
+                  autocomplete="off"
+                />
+                <button
+                  type="submit"
+                  class="fa-solid fa-magnifying-glass"
+                  id="inputCity"
+                  autocomplete="none"
+                  onclick="getWeather()"
+                ></button>
+              </form>
             </div>
-
-            <!-- text on card body with detail weather -->
-            <div class="row card-body data-weather-box">
-                <div style="display: flex; text-align: center; justify-content: center;">
-                    <p>Ramalan Cuaca&nbsp;</p>
-                    <p id="cityName"></p>
-                  </div>
-                <div class="col-md-4">
-                    <div class="detail-weather">
-                        <img src="assets/img/clear.png" alt="conditions" />
-                        <div class="card-body mt-1">
-                            <h4 class="card-title text-capitalize" id="conditions"></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="detail-weather">
-                        <img src="assets/img/mist.png" alt="windSpeed" />
-                        <div class="card-body mt-1" style="display: flex; text-align: center; justify-content: center;">
-                            <h4 class="card-title" id="windSpeed"></h4>
-                            <h4 class="card-text" id="active">&nbsp;Km/H</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="detail-weather">
-                        <img src="assets/img/temperature.png" alt="temperature" />
-                        <div class="card-body mt-1" style="display: flex; text-align: center; justify-content: center;">
-                            <h4 class="card-title" id="temperature"></h4>
-                            <h4 class="card-text" id="active">°C</h4>
-                        </div>
-                    </div>
-                </div>
+            <div class="col text-center city-description order-1 order-md-2">
+              <i class="fa-solid fa-location-dot"></i>
+              <p id="cityName" ><span></span></p>
             </div>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2000">
+              <img
+                src="assets/img/bg-1.jpg"
+                class="d-block w-100 card-img city-img"
+                id="city-img-1"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img
+                src="assets/img/bg-2.jpg"
+                class="d-block w-100 card-img city-img"
+                id="city-img-2"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img
+                src="assets/img/bg.jpg"
+                class="d-block w-100 card-img city-img"
+                id="city-img-3"
+                alt="..."
+              />
+            </div>
+          </div>
         </div>
+      </div>
 
-        <!-- script -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-        <script src="https://kit.fontawesome.com/bc2668a83f.js" crossorigin="anonymous"></script>
-        <script src="assets/js/script.js"></script>
-        <script src="assets/js/main.js"></script>
-    </body>
+      <!-- text on card body with detail weather -->
+      <div class="row card-body data-weather-box">
+        <div id="errorMsg" style="display: none">
+          Ramalan Cuaca untuk Kota tersebut tidak tersedia. <br />
+          Silahkan Masukan Nama Kota dengan benar.
+        </div>
+        <img
+          src="assets/img/404.png"
+          id="errorMsg"
+          style="display: none; width: 400px"
+        />
+        <div style="display: flex; text-align: center; justify-content: center">
+          <p class="detail-weather">Ramalan Cuaca&nbsp;</p>
+        </div>
+        <div class="col-md-4">
+          <div class="detail-weather">
+            <img id="iconConditions" alt="conditions" />
+            <div class="card-body mt-1">
+              <h4 class="card-title text-capitalize" id="conditions"></h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="detail-weather">
+            <img src="assets/img/mist.png" alt="windSpeed" />
+            <div
+              class="card-body mt-1"
+              style="display: flex; text-align: center; justify-content: center"
+            >
+              <h4 class="card-title" id="windSpeed"></h4>
+              <h4 class="card-text" id="active">&nbsp;Km/H</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="detail-weather">
+            <img src="assets/img/temperature.png" alt="temperature" />
+            <div
+              class="card-body mt-1"
+              style="display: flex; text-align: center; justify-content: center"
+            >
+              <h4 class="card-title" id="temperature"></h4>
+              <h4 class="card-text" id="active">°C</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/bc2668a83f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
