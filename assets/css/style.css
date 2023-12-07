@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-image: url(../img/bg-3.jpg);
+    backdrop-filter: blur(4px);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+    
+}
+
+.container{
+    min-height: 120vh;
+    width: 90%;
+    position: relative;
+    z-index: 1;
+}
+
+.weather-content-box{
+    height: 100px;
+    outline: none;
+    border: none;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(30px);
+    border-radius: 5px;
+    box-shadow: 0px 3px 40px rgba(0, 0, 0, 0.5);
+    transition: height .6s ease;
+    position: relative;
+    z-index: 2;
+    margin-top: -700;
+}
+
+.city-img{
+    height: 400px;
+    border-radius: 5px;
+    justify-content: center;
+    filter: brightness(70%);
+}
+
+.carousel{
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-inner{
+    border-radius: 5px;
+}
+
+.search-box{
+    display: flex;
+    align-items: center;
+}
+
+.search-box form{
+    display: flex;
+    background: rgba(255, 255, 255, .1);
+    backdrop-filter: blur(8px);
+    width: 380px;
+    height: 50px;
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 10px;
+    font-size: 19px;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-box form input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    padding-left: 10px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+}
+
+.search-box form input:focus{
+    outline: none;
+    background: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.search-box form input::placeholder {
+    color: white;
+    background: none;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.search-box form button{
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    padding-right: 10px;
+}
+
+.city-description i{
+    font-size: 50px;
+    color: white;
+    margin: 30px 80px 20px;
+    text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.8);
+}
+.city-description p{
+    font-weight: 600;
+    color: white;
+    text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.8);
+}
+
+.data-weather-box{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(30px);
+    margin: 0;
+    padding: 40px 0;
+}
+
+.data-weather-box img{
+    width: 40%;
+    padding: 20px;
+    position: relative;
+    margin: auto;
+}
+
+.data-weather-box h4{
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+}
+
+#search-info {
+    z-index: 99 !important;
+}
+
+
+
+
+
+/* =================================================================================================== */
+/*                                              Media Query                                            */
+/* =================================================================================================== */
+
+/* responsive phone Samsung S20 */
+@media (max-width: 468px) {
+    /* .data-weather-box{
+        margin-top: -135px;
+    } */
+}
+
+/* Mobile phone */
+@media (min-width: 469px) and (max-width: 767px) {
+
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 990px) {
+    .search-box {
+        margin-top: 200px;
+    }
+}
+
+/* laptop 1200px */
+@media (min-width: 991px) and (max-width: 1200px) {
+    
+}
